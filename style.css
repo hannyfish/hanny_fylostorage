@@ -7,9 +7,9 @@
 --vdarkblue: hsl(229, 57%, 11%);
   }
 
-body {display: grid;
-  place-content: center;
-  margin: 10% 0;
+body { display: grid;
+    place-items: center;
+    min-height: 100vh;
 background: var(--vdarkblue);}
 
 .sr-only {

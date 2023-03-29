@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@400;700&display=swap');
+
+:root {--gradient: linear-gradient(right, hsl(6, 100%, 80%) to hsl(335, 100%, 65%));
+--paleblue: hsl(243, 100%, 93%);
+--grayblue: hsl(229, 7%, 55%);
+--darkblue: hsl(228, 56%, 26%);
+--vdarkblue: hsl(229, 57%, 11%);
+  }
+
+body {display: grid;
+  place-content: center;
+  margin: 10% 0;
+background: var(--vdarkblue);}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+  overflow: hidden;
+}
+
+/*Mobile Styles*/
+body {background-image: url(https://github.com/hannyfish/hanny_fylostorage/blob/main/bg-mobile.png?raw=true); background-repeat: no-repeat;}
+main {max-width: 400px; min-height: 50vh;}
+
+.storage-container {width: 90%; height: 100%; display: flex; flex-direction: column; align-content: center; justify-content: space-evenly; }
+
+.storage-navi {background: var(--darkblue); height: 10rem; width:85%; padding: 20px; border-radius: 15px 80px 15px 15px; display: flex; flex-direction: column; align-content: center; justify-content: center; margin-bottom: 10%; flex-shrink: 0;}
+
+.storage-logo {background-image: url("https://raw.githubusercontent.com/hannyfish/hanny_fylostorage/2d3904616c97e9aa34f431bf5d496ca65741b93f/logo.svg"); flex-basis: 50%; max-width: 100%; background-repeat: no-repeat; }
+
+.storage-buttons {width: 80%; height: 50%; display: flex; flex-direction: row; justify-content: space-evenly; align-content: center; align-items: center; justify-items: center;}
+
+.storage-upload, .storage-doc, .storage-folder { width: 30px; height: 30px; padding: 5px;  border-radius: 10px; border:5px solid var(--vdarkblue);}
+
+.storage-doc {background: url("https://raw.githubusercontent.com/hannyfish/hanny_fylostorage/2d3904616c97e9aa34f431bf5d496ca65741b93f/icon-document.svg") var(--vdarkblue) no-repeat center; }
+
+.storage-folder {background: url("https://raw.githubusercontent.com/hannyfish/hanny_fylostorage/2d3904616c97e9aa34f431bf5d496ca65741b93f/icon-folder.svg") var(--vdarkblue) no-repeat center;}
+
+.storage-upload {background: url("https://raw.githubusercontent.com/hannyfish/hanny_fylostorage/2d3904616c97e9aa34f431bf5d496ca65741b93f/icon-upload.svg") var(--vdarkblue) no-repeat center;}
+
+.storage-info {width: 85%; height: 30%; padding: 20px; background: var(--darkblue); border-radius: 15px 15px 15px 15px; align-self: flex-end;flex-shrink: 0; display: flex; align-items: center; justify-content: center; flex-direction: column;}
+
+.storage-total {background: white; width: 9rem; height: 3rem; border-radius: 10px; font-size: 14px; font-weight: 700; font-family: 'Open Sans', sans-serif;  padding: 1rem; color: var(--grayblue); align-self: center; margin-top: -4%; flex-shrink: 0;}
+.storage-total b {font-size: 30px; color: var(--vdarkblue);}
+
+.storage-desc {font-family: 'Open Sans', sans-serif; color: var(--paleblue); font-size: 14px; text-align: justify; width: 90%; padding: 10px; }
+
+.progress-bar {width: 95%; border: 3px solid var(--vdarkblue); background: var(--vdarkblue); height: 15px; border-radius: 15px; display: flex; align-items: center;}
+
+.progress-display {background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%)); height: 18px; width: 81.5%; border-radius: 15px; display: flex; justify-content: flex-end; flex-wrap: no wrap;}
+.progress-label {width: 95%; font-family: 'Open Sans', sans-serif; font-size: 12px; color: var(--paleblue); font-weight: 700; display: flex; flex-direction: row; justify-content: space-between; margin: 5px;}
+.progress-label::before {content: "1 GB";}
+.progress-label::after {content: "1000 GB";}
+
+input[type='range']{
+    appearance: none;
+    width: 95%;
+    height: 100%;
+    border-color: var(--vdarkblue);
+    transition: opacity .2s;
+  border-radius: 15px;
+  border: 1px solid var(--vdarkblue);
+    overflow: hidden;
+}
+
+input[type='range']::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+    box-shadow: -250px 0 0 250px hsl(6, 100%, 80%);
+}
+
+input[type='range']::-webkit-slider-thumb::after{
+    box-shadow: -250px 0 0 250px hsl(335, 100%, 65%);
+}
+
+/*Desktop Styles*/
+@media screen and (min-width: 900px)
+{
+  
+  body {background-image: url(https://github.com/hannyfish/hanny_fylostorage/blob/main/bg-desktop.png?raw=true); background-repeat: no-repeat; background-size: cover; background-position: left 1vh top 50vh; }
+  main {min-width: 900px;
+  min-height: 50vh; display: grid;}
+  
+  .storage-container {height: 10rem;flex-direction: row; align-content: flex-end; justify-content: space-between;}
+  
+  .storage-navi {height: 75%; width: 35%; margin-right: 10%; margin-bottom: 0;}
+  .storage-info {width: 50%; height: 50%;}
+  .storage-logo {height: 50%; background-repeat: no-repeat; }
+  .storage-total {width: 9rem; height: 5rem;-webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 84% 51%, 0% 50%); color: var(--grayblue);
+clip-path: polygon(0 0, 100% 0, 100% 75%, 84% 51%, 0% 50%); position: relative; right: 25%;}
+.storage-total b {font-size: 30px; color: var(--vdarkblue);}
+}
